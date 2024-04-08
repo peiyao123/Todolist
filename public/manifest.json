@@ -12,15 +12,12 @@
     {
       "src": "public/duomi.png",
       "sizes": "1024x1024",
-      "type": "image/png",
-      "purpose": "markable"
+      "type": "image/png"
     },
     {
       "src": "public/256x256.png",
-      "sizes": "1024x1024",
-      "type": "image/png",
-      "purpose": "markable"
+      "sizes": "256x256",
+      "type": "image/png"
     }
   ]
 }
-
