@@ -11,13 +11,13 @@
   "icons": [
     {
       "src": "duomi.png",
-      "sizes": "512x512",
+      "sizes": "144x144",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
       "src": "256x256.png",
-      "sizes": "10x10",
+      "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     }
