@@ -1,54 +1,56 @@
 {
-    "name": "todolistplus",
-    "short_name": "todo",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#fff",
-    "theme_color": "#000000",
-    "orientation": "portrait",
-    "scope": "/",
-    "description": "A todolist app.",
-    "icons": [
-      {
-        "src": "public/duomi.png",
-        "sizes": "1024x1024",
-        "type": "image/png",
-        "purpose": "markable"
-      },
-      {
-        "src": "public/duomi.png",
-        "sizes": "256x256",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "public/duomi.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "public/duomi.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "public/duomi.png",
-        "sizes": "64x64",
-        "type": "image/png"
-      },
-      {
-        "src": "public/duomi.png",
-        "sizes": "32x32",
-        "type": "image/png"
-      },
-      {
-        "src": "public/duomi.png",
-        "sizes": "16x16",
-        "type": "image/png"
-      }
-    ]
+  "name": "todolistplus",
+  "short_name": "todo",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "scope": "/",
+  "description": "A todolist app.",
+  "icons": [
+    {
+      "src": "public/duomi.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
 
-  }
-  
