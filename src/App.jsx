@@ -25,6 +25,37 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 export default function App(props) {
 
+  const geoFindMe = () => { 
+    if (!navigator.geolocation) { 
+      console.log("Geolocation is not supported by your browser"); 
+    } else { 
+      console.log("Locating…"); 
+      navigator.geolocation.getCurrentPosition(success, error); 
+    } 
+  }; 
+ 
+  const success = (position) => { 
+    const latitude = position.coords.latitude; 
+    const longitude = position.coords.longitude; 
+    console.log(latitude, longitude); 
+ 
+    console.log(`Latitude: ${latitude}°, Longitude: ${longitude}°`); 
+    console.log(`Try here: https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`); 
+    locateTask(lastInsertedId, { 
+      latitude: latitude, 
+      longitude: longitude, 
+      error: "", 
+    }); 
+  }; 
+ 
+  const error = () => { 
+    console.log("Unable to retrieve your location"); 
+  };
+
+
+
+
+
   function usePersistedState(key, defaultValue) {
     const [state, setState] = useState(
       () => JSON.parse(localStorage.getItem(key)) || defaultValue);

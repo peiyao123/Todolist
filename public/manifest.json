@@ -1,7 +1,7 @@
 {
     "name": "todolistplus",
     "short_name": "todo",
-    "start_url": "./index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#fff",
     "theme_color": "#000000",
