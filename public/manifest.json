@@ -13,7 +13,7 @@
         "src": "public/1024x1024.png",
         "sizes": "1024x1024",
         "type": "image/png",
-        "purpose": "any"
+        "purpose": "markable"
       },
       {
         "src": "public/256x256.png",
