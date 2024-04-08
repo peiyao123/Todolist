@@ -1,19 +1,55 @@
 {
-  "name": "todolistplus",
-  "short_name": "todo",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#000000",
-  "orientation": "portrait",
+  "name": "todo",
+  "short_name": "do",
+  "start_url": "./index.html",
   "scope": "/",
-  "description": "A todolist app.",
+  "homepage": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#fff",
+  "description": "123",
   "icons": [
     {
       "src": "public/duomi.png",
-      "sizes": "1024x1024",
+      "sizes": "512x512",
       "type": "image/png",
-      "purpose": "markable"      
+      "purpose": "maskable"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "10x10",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "10x10",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "10x10",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "10x10",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "10x10",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/duomi.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
