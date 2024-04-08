@@ -10,46 +10,18 @@
   "description": "123",
   "icons": [
     {
-      "src": "public/duomi.png",
+      "src": "duomi.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "public/duomi.png",
+      "src": "256x256.png",
       "sizes": "10x10",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "public/duomi.png",
-      "sizes": "10x10",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "public/duomi.png",
-      "sizes": "10x10",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "public/duomi.png",
-      "sizes": "10x10",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "public/duomi.png",
-      "sizes": "10x10",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "public/duomi.png",
-      "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     }
+  
+ 
   ]
 }
