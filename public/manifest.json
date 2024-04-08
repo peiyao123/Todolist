@@ -5,6 +5,8 @@
     "display": "standalone",
     "background_color": "#fff",
     "theme_color": "#000000",
+    "orientation": "portrait",
+    "scope": "/",
     "description": "A todolist app.",
     "icons": [
       {
