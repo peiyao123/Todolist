@@ -67,14 +67,18 @@ export default function App(props) {
 
   const [tasks, setTasks] = usePersistedState("tasks", []); 
   const [filter, setFilter] = useState("All");
+  const [lastInsertedId, setLastInsertedId] = useState("");
 
   function addTask(name) {
-      const newTask = { 
-      id: `todo-${nanoid()}`, 
+    const id = "todo-" + nanoid();
+    const newTask = { 
+      id: id, 
       name: name, 
       completed: false, 
+      location: { latitude: "##", longitude: "##", error: "##" },
     };
-      setTasks([...tasks, newTask]);
+    setLastInsertedId(id);
+    setTasks([...tasks, newTask]);
 
   }
 
@@ -131,7 +135,19 @@ export default function App(props) {
    
   }
 
- 
+  function locateTask(id, location) {
+    console.log("locate Task", id, " before");
+    console.log(location, tasks);
+    const locatedTaskList = tasks.map((task) => {
+     
+      if (id === task.id) {
+        return { ...task, location: location };
+      }
+      return task;
+    });
+    console.log(locatedTaskList);
+    setTasks(locatedTaskList);
+  }
   
   
  
