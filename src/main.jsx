@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import App from './App.jsx'
 import './index.css'
 
@@ -17,16 +17,10 @@ if ("serviceWorker" in navigator) {
 } 
 
 
-
-
-
-
-
 const DATA = JSON.parse(localStorage.getItem('tasks')) || [];
 
-ReactDOM.render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App tasks={DATA} />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

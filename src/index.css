@@ -19,6 +19,9 @@ ul {
   list-style: none;
   padding: 0;
 }
+a {
+  cursor: pointer;
+}
 button {
   -moz-osx-font-smoothing: inherit;
   -webkit-font-smoothing: inherit;

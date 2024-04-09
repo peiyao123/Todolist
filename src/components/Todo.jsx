@@ -1,4 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback} from "react";
+import Popup from "reactjs-popup"; 
+import "reactjs-popup/dist/index.css"; 
+import Webcam from "react-webcam"; 
+import { addPhoto, GetPhotoSrc } from "../db.jsx"; 
+
 
 function usePrevious(value) {
   const ref = useRef();
@@ -70,6 +75,9 @@ function Todo(props) {
         />
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
+          <a href="https://www.google.com/maps">(map)</a> 
+          &nbsp; | &nbsp;
+          <a href="https://www.sinch.com/">(sms)</a> 
         </label>
       </div>
       <div className="btn-group">
@@ -80,13 +88,41 @@ function Todo(props) {
           ref={editButtonRef}>
           Edit <span className="visually-hidden">{props.name}</span>
       </button>
-
+      <Popup
+          trigger={
+            <button type="button" className="btn">
+              {" "}
+              Take Photo{" "}
+            </button>
+          }
+          modal
+        >
+          <div>
+            <WebcamCapture id={props.id} photoedTask={props.photoedTask} />
+          </div>
+      </Popup>
+        
+        <Popup
+          trigger={
+            <button type="button" className="btn">
+              {" "}
+              View Photo{" "}
+            </button>
+          }
+          modal
+        >
+          <div>
+            <ViewPhoto id={props.id} alt={props.name} />
+          </div>
+        </Popup>
         <button
           type="button"
           className="btn btn__danger"
           onClick={() => props.deleteTask(props.id)}>
           Delete <span className="visually-hidden">{props.name}</span>
         </button>
+
+
       </div>
     </div>
   );
@@ -103,5 +139,95 @@ function Todo(props) {
 
   return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
 }
+
+const WebcamCapture = (props) => {
+  const webcamRef = useRef(null);
+  const [imgSrc, setImgSrc] = useState(null);
+  const [imgId, setImgId] = useState(null);
+  const [photoSave, setPhotoSave] = useState(false);
+
+  useEffect(() => {
+    if (photoSave) {
+      console.log("useEffect detected photoSave");
+      props.photoedTask(imgId);
+      setPhotoSave(false);
+    }
+  });
+  console.log("WebCamCapture", props.id);
+
+  const capture = useCallback(
+    (id) => {
+      const imageSrc = webcamRef.current.getScreenshot();
+      setImgSrc(imageSrc);
+      console.log("capture", imageSrc.length, id);
+    },
+    [webcamRef, setImgSrc]
+  );
+
+  const savePhoto = (id, imgSrc) => {
+    console.log("savePhoto", imgSrc.length, id);
+    addPhoto(id, imgSrc);
+    setImgId(id);
+    setPhotoSave(true);
+  };
+
+  const cancelPhoto = (id, imgSrc) => {
+    console.log("cancelPhoto", imgSrc.length, id);
+  };
+  return (
+    <>
+      {!imgSrc && (
+        <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
+      )}
+      {imgSrc && <img src={imgSrc} />}
+      <div className="btn-group">
+        {!imgSrc && (
+          <button
+            type="button"
+            className="btn"
+            onClick={() => capture(props.id)}
+          >
+            Capture photo
+          </button>
+        )}
+        {imgSrc && (
+          <button
+            type="button"
+            className="btn"
+            onClick={() => savePhoto(props.id, imgSrc)}
+          >
+            Save Photo
+          </button>
+        )}
+        <button
+          type="button"
+          className="btn todo-cancel"
+          onClick={() => cancelPhoto(props.id, imgSrc)}
+        >
+          Cancel
+        </button>
+      </div>
+    </>
+  );
+};
+
+const ViewPhoto = (props) => {
+  const photoSrc = GetPhotoSrc(props.id);
+  return (
+    <>
+      <div>
+        <img src={photoSrc} alt={props.name} />
+      </div>
+    </>
+  );
+};
+
+
+
+
+
+
+
+
 
 export default Todo;
