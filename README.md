@@ -14,6 +14,7 @@ Currently, two official plugins are available:
 5.on the mobile, you copy the url and type the url on the website. so you can see my pwa and download 
 
 
+![how to download](https://github.com/peiyao123/Todolist/assets/130302361/54c1df57-49e7-470e-9e58-7fae4f2e5e77)
 
 
 
