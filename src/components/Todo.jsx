@@ -75,9 +75,9 @@ function Todo(props) {
         />
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
-          <a href="https://www.google.com/maps">(map)</a> 
+          <a href={props.location.mapURL}>(map)</a> {/*W07 CAM - improvement*/}
           &nbsp; | &nbsp;
-          <a href="https://www.sinch.com/">(sms)</a> 
+          <a href={props.location.smsURL}>(sms)</a> {/*W07 CAM - improvement*/}
         </label>
       </div>
       <div className="btn-group">
