@@ -8,7 +8,7 @@ self.addEventListener("install", (event) => {
         '/src/components/Form.jsx',
         '/public/256x256.png',
         '/public/duomi.png',
-        '/src/components/Todo.jsx',
+        '/components/Todo.jsx',
         '/src/App.css',
         '/src/App.jsx',
         '/src/db.jsx',
@@ -21,13 +21,13 @@ self.addEventListener("install", (event) => {
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
+// self.addEventListener('fetch', event => {
+//   event.respondWith(
+//     caches.match(event.request).then(response => {
+//       return response || fetch(event.request);
+//     })
+//   );
+// });
 
 
 
