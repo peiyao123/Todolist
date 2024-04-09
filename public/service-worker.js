@@ -4,16 +4,16 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open('my-cache').then(cache => {
       return cache.addAll([
-        '/src/components/FilterButton.jsx',
-        '/src/components/Form.jsx',
+        '/sec/components/FilterButton.jsx',
+        '/sec/components/Form.jsx',
         '/public/256x256.png',
         '/public/duomi.png',
-        '/components/Todo.jsx',
-        '/src/App.css',
-        '/src/App.jsx',
-        '/src/db.jsx',
-        '/src/index.css',
-        '/src/main.jsx',
+        '/sec/components/Todo.jsx',
+        '/sec/App.css',
+        '/sec/App.jsx',
+        '/sec/db.jsx',
+        '/sec/index.css',
+        '/sec/main.jsx',
         '/index.html',
         '/vite.config.js',
       ]);
